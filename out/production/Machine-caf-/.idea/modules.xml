@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Machine-caf-.iml" filepath="$PROJECT_DIR$/Machine-caf-.iml" />
-      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/test/utilities.iml" filepath="$PROJECT_DIR$/test/utilities.iml" />
     </modules>
   </component>
 </project>

@@ -4,18 +4,19 @@ public class Machine {
     private int _nombreCafésServis = 0;
     private double _argentEncaissé = 0;
     private boolean _eauDisponible = true;
-    private boolean _gobeletsDisponibles = true;
-    private boolean _caféEnStock = true;
+    private int _nombreGobelets;
+    private int _caféEnStock;
 
     public Machine(int nombreGobeletsInitial, int dosesCaféInitiales) {
-        _gobeletsDisponibles = nombreGobeletsInitial > 0; // TODO : contradiction à résoudre avec le client
-        _caféEnStock = dosesCaféInitiales > 0;
+        _nombreGobelets = nombreGobeletsInitial;
+        _caféEnStock = dosesCaféInitiales;
     }
 
     public void Insérer(double somme) {
-        if(somme >= 0.4 && _eauDisponible && _gobeletsDisponibles && _caféEnStock){
+        if(somme >= 0.4 && _eauDisponible && _nombreGobelets > 0 && _caféEnStock > 0){
             _argentEncaissé += somme;
             _nombreCafésServis ++;
+            _nombreGobelets --;
         }
     }
 

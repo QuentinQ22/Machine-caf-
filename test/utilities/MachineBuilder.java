@@ -3,8 +3,8 @@ package utilities;
 import machineacafe.Machine;
 
 public class MachineBuilder {
-    private boolean _possèdeCafé = true;
-    private boolean _possèdeGobelets = true;
+    private int _nombreDosesCafé = 1;
+    private int _nombreGobelets = 1;
 
     public static Machine Default() {
         return new MachineBuilder().Build();
@@ -12,16 +12,24 @@ public class MachineBuilder {
 
     public Machine Build()
     {
-        return new Machine(_possèdeGobelets ? 1 : 0, _possèdeCafé ? 1 : 0);
+        return new Machine(_nombreGobelets, _nombreDosesCafé);
     }
 
     public MachineBuilder SansGobelets() {
-        _possèdeGobelets = false;
-        return this;
+        return AyantXGobelets(0);
     }
 
     public MachineBuilder SansCafé() {
-        _possèdeCafé = false;
+        return AyantYDosesDeCafé(0);
+    }
+
+    public MachineBuilder AyantXGobelets(int x) {
+        _nombreGobelets = x;
+        return this;
+    }
+
+    public MachineBuilder AyantYDosesDeCafé(int y) {
+        _nombreDosesCafé = y;
         return this;
     }
 }
