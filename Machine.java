@@ -4,12 +4,7 @@ public class Machine {
     private double _argentEncaisse = 0;
 
     public void Inserer(double somme){
-        if(somme == 0.4)
-        {
-            _argentEncaisse += 0.4;
-            _nombreCafesServis ++;
-        }
-        if(somme > 0.4)
+        if(somme >= 0.4)
         {
             _argentEncaisse += somme;
             _nombreCafesServis ++;

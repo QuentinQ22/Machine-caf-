@@ -66,10 +66,10 @@ public class MachineACafeTest {
 
         //ALORS un café coule
         int nombreCafesFinaux = machine.GetNombreCafesServis();
-        Assertions.assertEquals(nombreCafeInitiaux +1, nombreCafesFinaux);
+        assertEquals(nombreCafeInitiaux +1, nombreCafesFinaux);
 
         //ET l'argent est encaissé
         double argentEncaisseFinal = machine.GetArgentEncaisse();
-        Assertions.assertEquals(argentEncaisseInitial + sommeInseree, argentEncaisseFinal);
+        assertEquals(argentEncaisseInitial + sommeInseree, argentEncaisseFinal);
     }
 }
