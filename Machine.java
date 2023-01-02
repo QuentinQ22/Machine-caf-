@@ -9,6 +9,11 @@ public class Machine {
             _argentEncaisse += 0.4;
             _nombreCafesServis ++;
         }
+        if(somme > 0.4)
+        {
+            _argentEncaisse += somme;
+            _nombreCafesServis ++;
+        }
     }
 
     public int GetNombreCafesServis() {

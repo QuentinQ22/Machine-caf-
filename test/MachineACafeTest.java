@@ -1,3 +1,6 @@
+
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -19,11 +22,11 @@ public class MachineACafeTest {
 
         //ALORS un café coule
         int nombreCafesFinaux = machine.GetNombreCafesServis();
-        assertEquals(nombreCafeInitiaux +1, nombreCafesFinaux);
+        Assertions.assertEquals(nombreCafeInitiaux +1, nombreCafesFinaux);
 
         //ET l'argent est encaissé
         double argentEncaisseFinal = machine.GetArgentEncaisse();
-        assertEquals(argentEncaisseInitial + sommeInseree, argentEncaisseFinal);
+        Assertions.assertEquals(argentEncaisseInitial + sommeInseree, argentEncaisseFinal);
     }
 
     @Test
@@ -41,11 +44,11 @@ public class MachineACafeTest {
 
         //ALORS aucun café ne coule
         int nombreCafesFinaux = machine.GetNombreCafesServis();
-        assertEquals(nombreCafeInitiaux, nombreCafesFinaux);
+        Assertions.assertEquals(nombreCafeInitiaux, nombreCafesFinaux);
 
         //ET l'argent est rendu
         double argentEncaisseFinal = machine.GetArgentEncaisse();
-        assertEquals(argentEncaisseInitial, argentEncaisseFinal);
+        Assertions.assertEquals(argentEncaisseInitial, argentEncaisseFinal);
     }
 
     @Test
@@ -63,10 +66,10 @@ public class MachineACafeTest {
 
         //ALORS un café coule
         int nombreCafesFinaux = machine.GetNombreCafesServis();
-        assertEquals(nombreCafeInitiaux +1, nombreCafesFinaux);
+        Assertions.assertEquals(nombreCafeInitiaux +1, nombreCafesFinaux);
 
         //ET l'argent est encaissé
         double argentEncaisseFinal = machine.GetArgentEncaisse();
-        assertEquals(argentEncaisseInitial + sommeInseree, argentEncaisseFinal);
+        Assertions.assertEquals(argentEncaisseInitial + sommeInseree, argentEncaisseFinal);
     }
 }
