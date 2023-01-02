@@ -47,4 +47,26 @@ public class MachineACafeTest {
         double argentEncaisseFinal = machine.GetArgentEncaisse();
         assertEquals(argentEncaisseInitial, argentEncaisseFinal);
     }
+
+    @Test
+    @DisplayName("QUAND on met plus de 40cts ALORS le café coule ET l'argent est encaissé")
+    public void Test_Somme_Inseree_Superieur_Au_Prix() {
+
+        //ETANT DONNE  une machine
+        Machine machine = new Machine();
+        int nombreCafeInitiaux = machine.GetNombreCafesServis();
+        double argentEncaisseInitial = machine.GetArgentEncaisse();
+        double sommeInseree = 0.41;
+
+        //QUAND on met plus de 40cts
+        machine.Inserer(sommeInseree);
+
+        //ALORS un café coule
+        int nombreCafesFinaux = machine.GetNombreCafesServis();
+        assertEquals(nombreCafeInitiaux +1, nombreCafesFinaux);
+
+        //ET l'argent est encaissé
+        double argentEncaisseFinal = machine.GetArgentEncaisse();
+        assertEquals(argentEncaisseInitial + sommeInseree, argentEncaisseFinal);
+    }
 }
