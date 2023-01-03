@@ -34,7 +34,7 @@ public class Machine {
             _gobelets.Consommer();
             _café.Consommer();
 
-            if (_boutonSucreAppuyé && _doseSucre <= GetStockSucre()) {
+            if (_boutonSucreAppuyé) {
                 for (int i = 0; i < _doseSucre; i++) {
                     _sucre.Consommer();
                 }
