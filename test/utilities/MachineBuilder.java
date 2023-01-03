@@ -5,7 +5,7 @@ import machineacafe.Machine;
 public class MachineBuilder {
     private int _nombreDosesCafé = 2;
     private int _nombreGobelets = 2;
-    private int _stockInitialSucre = 3;
+    private int _stockInitialSucre = 10;
 
     public static Machine Default() {
         return new MachineBuilder().Build();
