@@ -3,36 +3,41 @@ package machineacafe;
 public class Machine {
     private int _nombreCafésServis = 0;
     private double _argentEncaissé = 0;
-    private Ressource _eau;
+    private Ressource _eauRes;
     private final RessourceStockée _gobelets;
+
     private final RessourceStockée _café;
     private final RessourceStockée _sucre;
     private boolean _boutonSucreAppuyé = false;
+    private int _doseSucre;
 
-    public Machine(){
+    public Machine() {
         _gobelets = new RessourceStockée(1);
         _café = new RessourceStockée(1);
         _sucre = new RessourceStockée(1);
-        _eau = new RessourceInfinie(true);
+        _eauRes = new RessourceInfinie(true);
+
     }
 
-    private boolean PeutFaireUnCaféSimple(double somme){
-        return somme >= 0.4 && _eau.EstPrésente() && _gobelets.EstPrésente() && _café.EstPrésente();
+    private boolean PeutFaireUnCaféSimple(double somme) {
+        return somme >= 0.4 && _eauRes.EstPrésente() && _gobelets.EstPrésente() && _café.EstPrésente();
     }
 
-    private boolean PeutFaireUnCaféSucré(double somme){
+    private boolean PeutFaireUnCaféSucré(double somme) {
         return PeutFaireUnCaféSimple(somme) && _sucre.EstPrésente();
     }
 
     public void Insérer(double somme) {
-        if(_boutonSucreAppuyé ? PeutFaireUnCaféSucré(somme) : PeutFaireUnCaféSimple(somme)){
+        if (_boutonSucreAppuyé ? PeutFaireUnCaféSucré(somme) : PeutFaireUnCaféSimple(somme)) {
             _argentEncaissé += somme;
-            _nombreCafésServis ++;
+            _nombreCafésServis++;
             _gobelets.Consommer();
             _café.Consommer();
 
-            if(_boutonSucreAppuyé){
-                _sucre.Consommer();
+            if (_boutonSucreAppuyé) {
+                for (int i = 0; i < _doseSucre; i++) {
+                    _sucre.Consommer();
+                }
             }
         }
 
@@ -42,15 +47,23 @@ public class Machine {
     public int GetNombreCafésServis() {
         return _nombreCafésServis;
     }
+
     public double GetArgentEncaissé() {
         return _argentEncaissé;
     }
-    public int GetStockSucre() { return _sucre.GetStock(); }
+
+    public int GetStockSucre() {
+        return _sucre.GetStock();
+    }
 
     public void CouperEau() {
-        _eau = new RessourceInfinie(false);
+        _eauRes = new RessourceInfinie(false);
     }
-    public void SucrerCafé() { _boutonSucreAppuyé = true; }
+
+    public void SucrerCafé(int doseSucre) {
+        _boutonSucreAppuyé = true;
+        _doseSucre = doseSucre;
+    }
 
     public void RéapprovisionnerCafé() {
         _café.Réapprovisionner();

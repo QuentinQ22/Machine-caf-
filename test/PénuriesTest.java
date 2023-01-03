@@ -7,11 +7,36 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PénuriesTest {
     @Test
-    @DisplayName("ETANT DONNE une machine n'ayant plus d'eau " +
+    @DisplayName("ETANT DONNE une machine n'ayant plus d'eau en etant sur le réseau" +
             "QUAND on met 40cts " +
             "ALORS aucun café ne coule " +
             "ET l'argent est rendu")
-    public void Test_Sans_Eau(){
+    public void Test_Sans_Eau_reseau(){
+        // ETANT DONNE une machine n'ayant plus d'eau
+        Machine machine = MachineBuilder.Default();
+        machine.CouperEau();
+
+        int nombreCaféInitiaux = machine.GetNombreCafésServis();
+        double argentEncaisséInitial = machine.GetArgentEncaissé();
+
+        // QUAND on met 40cts
+        machine.Insérer(0.40);
+
+        // ALORS aucun café ne coule
+        int nombreCafésFinaux = machine.GetNombreCafésServis();
+        assertEquals(nombreCaféInitiaux, nombreCafésFinaux);
+
+        // ET l'argent est rendu
+        double argentEncaisséFinal = machine.GetArgentEncaissé();
+        assertEquals(argentEncaisséInitial, argentEncaisséFinal);
+    }
+    
+    @Test
+    @DisplayName("ETANT DONNE une machine n'ayant plus d'eau ayant un stock" +
+            "QUAND on met 40cts " +
+            "ALORS aucun café ne coule " +
+            "ET l'argent est rendu")
+    public void Test_Sans_Eau_stock(){
         // ETANT DONNE une machine n'ayant plus d'eau
         Machine machine = MachineBuilder.Default();
         machine.CouperEau();
@@ -96,7 +121,7 @@ public class PénuriesTest {
         double argentEncaisséInitial = machine.GetArgentEncaissé();
 
         // ET un appui sur le bouton sucre
-        machine.SucrerCafé();
+        machine.SucrerCafé(1);
 
         // QUAND on insère 40 cts
         double sommeInsérée = 0.40;
