@@ -82,4 +82,32 @@ public class PénuriesTest {
         double argentEncaisséFinal = machine.GetArgentEncaissé();
         assertEquals(argentEncaisséInitial, argentEncaisséFinal);
     }
+
+    @Test
+    @DisplayName("ETANT DONNE une machine n'ayant pas de sucre " +
+            "ET un appui sur le bouton sucre " +
+            "QUAND on insère 40 cts " +
+            "ALORS aucun café ne coule " +
+            "ET l'argent est remboursé")
+    public void Decrementation_Café(){
+        // ETANT DONNE une machine n'ayant plus de sucre
+        Machine machine = new MachineBuilder().SansSucre().Build();
+        int nombreCaféInitiaux = machine.GetNombreCafésServis();
+        double argentEncaisséInitial = machine.GetArgentEncaissé();
+
+        // ET un appui sur le bouton sucre
+        machine.SucrerCafé();
+
+        // QUAND on insère 40 cts
+        double sommeInsérée = 0.40;
+        machine.Insérer(sommeInsérée);
+
+        // ALORS aucun café ne coule
+        int nombreCafésFinaux = machine.GetNombreCafésServis();
+        assertEquals(nombreCaféInitiaux, nombreCafésFinaux);
+
+        // ET l'argent est rendu
+        double argentEncaisséFinal = machine.GetArgentEncaissé();
+        assertEquals(argentEncaisséInitial, argentEncaisséFinal);
+    }
 }

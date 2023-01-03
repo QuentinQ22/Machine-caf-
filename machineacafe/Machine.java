@@ -3,32 +3,64 @@ package machineacafe;
 public class Machine {
     private int _nombreCafésServis = 0;
     private double _argentEncaissé = 0;
-    private boolean _eauDisponible = true;
-    private int _nombreGobelets;
-    private int _caféEnStock;
+    private Ressource _eau;
+    private final RessourceStockée _gobelets;
+    private final RessourceStockée _café;
+    private final RessourceStockée _sucre;
+    private boolean _boutonSucreAppuyé = false;
 
-    public Machine(int nombreGobeletsInitial, int dosesCaféInitiales) {
-        _nombreGobelets = nombreGobeletsInitial;
-        _caféEnStock = dosesCaféInitiales;
+    public Machine(){
+        _gobelets = new RessourceStockée(1);
+        _café = new RessourceStockée(1);
+        _sucre = new RessourceStockée(1);
+        _eau = new RessourceInfinie(true);
+    }
+
+    private boolean PeutFaireUnCaféSimple(double somme){
+        return somme >= 0.4 && _eau.EstPrésente() && _gobelets.EstPrésente() && _café.EstPrésente();
+    }
+
+    private boolean PeutFaireUnCaféSucré(double somme){
+        return PeutFaireUnCaféSimple(somme) && _sucre.EstPrésente();
     }
 
     public void Insérer(double somme) {
-        if(somme >= 0.4 && _eauDisponible && _nombreGobelets > 0 && _caféEnStock > 0){
+        if(_boutonSucreAppuyé ? PeutFaireUnCaféSucré(somme) : PeutFaireUnCaféSimple(somme)){
             _argentEncaissé += somme;
             _nombreCafésServis ++;
-            _nombreGobelets --;
+            _gobelets.Consommer();
+            _café.Consommer();
+
+            if(_boutonSucreAppuyé){
+                _sucre.Consommer();
+            }
         }
+
+        _boutonSucreAppuyé = false;
     }
 
     public int GetNombreCafésServis() {
         return _nombreCafésServis;
     }
-
     public double GetArgentEncaissé() {
         return _argentEncaissé;
     }
+    public int GetStockSucre() { return _sucre.GetStock(); }
 
     public void CouperEau() {
-        _eauDisponible = false;
+        _eau = new RessourceInfinie(false);
+    }
+    public void SucrerCafé() { _boutonSucreAppuyé = true; }
+
+    public void RéapprovisionnerCafé() {
+        _café.Réapprovisionner();
+    }
+
+    public void RéapprovisionnerGobelet() {
+        _gobelets.Réapprovisionner();
+    }
+
+    public void RéapprovisionnerSucre() {
+        _sucre.Réapprovisionner();
     }
 }
