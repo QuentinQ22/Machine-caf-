@@ -110,4 +110,43 @@ public class PénuriesTest {
         double argentEncaisséFinal = machine.GetArgentEncaissé();
         assertEquals(argentEncaisséInitial, argentEncaisséFinal);
     }
+
+    @Test
+    @DisplayName("ETANT DONNE une machine n'ayant pas de touillette " +
+            "ET qu'on appuie sur le bouton sucre" +
+            "QUAND on met 40cts" +
+            "ALORS un café coule " +
+            "ET le sucre est consommé" +
+            "ET l'argent est encaissé")
+    public void Test_Sans_Touillette(){
+        // ETANT DONNE une machine n'ayant pas de touillette
+        Machine machine = new MachineBuilder()
+                .SansTouillette()
+                .Build();
+
+        int nombreCaféInitiaux = machine.GetNombreCafésServis();
+        double argentEncaisséInitial = machine.GetArgentEncaissé();
+        int nombreDoseDeSucreInitial = machine.GetStockSucre();
+
+
+        // ET qu'on appuie sur le bouton sucre
+        machine.SucrerCafé();
+
+        // QUAND on met 40cts
+        machine.Insérer(0.40);
+
+        // ALORS un café coule
+        int nombreCafésFinaux = machine.GetNombreCafésServis();
+        assertEquals(nombreCaféInitiaux +1, nombreCafésFinaux);
+
+        //ET une dose de sucre est consommé
+        int nombreDoseDeSucreFinal = machine.GetStockSucre();
+        assertEquals(nombreDoseDeSucreInitial +1, nombreDoseDeSucreFinal);
+
+        // ET l'argent est rendu
+        double argentEncaisséFinal = machine.GetArgentEncaissé();
+        assertEquals(argentEncaisséInitial + 0.40, argentEncaisséFinal);
+    }
+
+
 }

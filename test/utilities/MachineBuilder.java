@@ -5,7 +5,9 @@ import machineacafe.Machine;
 public class MachineBuilder {
     private int _nombreDosesCafé = 2;
     private int _nombreGobelets = 2;
+    private int _nombreTouillettes = 2;
     private int _stockInitialSucre = 1;
+    private int _stockInitialTouillette = 1;
 
     public static Machine Default() {
         return new MachineBuilder().Build();
@@ -31,6 +33,14 @@ public class MachineBuilder {
             machine.RéapprovisionnerCafé();
             machine.RéapprovisionnerGobelet();
         }
+        if(_stockInitialTouillette == 0)
+        {
+            machine.SucrerCafé();
+            machine.Insérer(0.40);
+            machine.RéapprovisionnerCafé();
+            machine.RéapprovisionnerSucre();
+            machine.RéapprovisionnerTouillette();
+        }
 
         for (var dosesCaféDansLaMachine = 1; dosesCaféDansLaMachine < _nombreDosesCafé; dosesCaféDansLaMachine ++)
             machine.RéapprovisionnerCafé();
@@ -40,6 +50,9 @@ public class MachineBuilder {
 
         for (var sucreDansLaMachine = 1; sucreDansLaMachine < _stockInitialSucre; sucreDansLaMachine ++)
             machine.RéapprovisionnerSucre();
+
+        for (var touillettesDansLaMachine = 1; touillettesDansLaMachine < _stockInitialTouillette; touillettesDansLaMachine ++)
+            machine.RéapprovisionnerTouillette();
 
         return machine;
     }
@@ -64,6 +77,11 @@ public class MachineBuilder {
 
     public MachineBuilder SansSucre() {
         _stockInitialSucre = 0;
+        return this;
+    }
+
+    public MachineBuilder SansTouillette() {
+        _stockInitialTouillette = 0;
         return this;
     }
 }

@@ -7,6 +7,7 @@ public class Machine {
     private final RessourceStockée _gobelets;
     private final RessourceStockée _café;
     private final RessourceStockée _sucre;
+    private final RessourceStockée _touillette;
     private boolean _boutonSucreAppuyé = false;
 
     public Machine(){
@@ -14,6 +15,7 @@ public class Machine {
         _café = new RessourceStockée(1);
         _sucre = new RessourceStockée(1);
         _eau = new RessourceInfinie(true);
+        _touillette = new RessourceStockée(1);
     }
 
     private boolean PeutFaireUnCaféSimple(double somme){
@@ -33,6 +35,7 @@ public class Machine {
 
             if(_boutonSucreAppuyé){
                 _sucre.Consommer();
+                _touillette.Consommer();
             }
         }
 
@@ -46,6 +49,8 @@ public class Machine {
         return _argentEncaissé;
     }
     public int GetStockSucre() { return _sucre.GetStock(); }
+
+    public int GetStockTouillette() { return _touillette.GetStock();}
 
     public void CouperEau() {
         _eau = new RessourceInfinie(false);
@@ -62,5 +67,9 @@ public class Machine {
 
     public void RéapprovisionnerSucre() {
         _sucre.Réapprovisionner();
+    }
+
+    public void RéapprovisionnerTouillette() {
+        _touillette.Réapprovisionner();
     }
 }
