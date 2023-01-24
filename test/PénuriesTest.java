@@ -121,7 +121,7 @@ public class PénuriesTest {
         double argentEncaisséInitial = machine.GetArgentEncaissé();
 
         // ET un appui sur le bouton sucre
-        machine.SucrerCafé(1);
+        machine.SucrerCafé();
 
         // QUAND on insère 40 cts
         double sommeInsérée = 0.40;

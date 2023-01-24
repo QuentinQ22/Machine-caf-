@@ -137,10 +137,10 @@ public class StocksTest {
         // QUAND on insère 40cts 2 fois en ayant appuyé sur Sucrer Café au préalable
         double sommeInsérée = 0.40;
 
-        machine.SucrerCafé(1);
+        machine.SucrerCafé();
         machine.Insérer(sommeInsérée);
 
-        machine.SucrerCafé(1);
+        machine.SucrerCafé();
         machine.Insérer(sommeInsérée);
 
         // ALORS un seul café est servi

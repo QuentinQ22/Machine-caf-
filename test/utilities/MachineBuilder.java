@@ -1,11 +1,13 @@
 package utilities;
 
-import machineacafe.Machine;
+import machineacafe.*;
+import net.bank.interop.ModulePrelevementAutomatique;
 
 public class MachineBuilder {
     private int _nombreDosesCafé = 2;
     private int _nombreGobelets = 2;
-    private int _stockInitialSucre = 10;
+    private int _stockInitialSucre = 1;
+    private ModulePrelevementAutomatique _modulePrélèvementAutomatique = null;
 
     public static Machine Default() {
         return new MachineBuilder().Build();
@@ -13,7 +15,9 @@ public class MachineBuilder {
 
     public Machine Build()
     {
-        var machine = new Machine();
+        var machine = _modulePrélèvementAutomatique == null
+                ? new Machine()
+                : new Machine(_modulePrélèvementAutomatique);
 
         if(_nombreDosesCafé == 0){
             machine.Insérer(0.40);
@@ -26,7 +30,7 @@ public class MachineBuilder {
         }
 
         if(_stockInitialSucre == 0){
-            machine.SucrerCafé(1);
+            machine.SucrerCafé();
             machine.Insérer(0.40);
             machine.RéapprovisionnerCafé();
             machine.RéapprovisionnerGobelet();
@@ -64,6 +68,11 @@ public class MachineBuilder {
 
     public MachineBuilder SansSucre() {
         _stockInitialSucre = 0;
+        return this;
+    }
+
+    public MachineBuilder AyantUnModuleDePaiement(ModulePrelevementAutomatique modulePaiement) {
+        _modulePrélèvementAutomatique = modulePaiement;
         return this;
     }
 }
