@@ -18,16 +18,16 @@ public class Machine {
     public Machine() {
         _gobelets = new RessourceStockée(1);
         _café = new RessourceStockée(1);
-        _sucre = new RessourceStockée(1);
-        _eau = new RessourceInfinie(true);
+        _sucre = new RessourceStockée(10);
+        _eauRes = new RessourceInfinie(true);
         _touillette = new RessourceStockée(1);
     }
 
     private boolean PeutFaireUnCaféSimple(double somme) {
-        return somme >= 0.4 && _eau.EstPrésente() && _gobelets.EstPrésente() && _café.EstPrésente();
-        _eauRes = new RessourceInfinie(true);
+        return somme >= 0.4 && _eauRes.EstPrésente() && _gobelets.EstPrésente() && _café.EstPrésente();
     }
-    public Machine(ModulePrelevementAutomatique module){
+
+    public Machine(ModulePrelevementAutomatique module) {
         this();
         _modulePrelevementAutomatique = module;
     }
@@ -43,16 +43,14 @@ public class Machine {
             _gobelets.Consommer();
             _café.Consommer();
 
-            if (_boutonSucreAppuyé) {
-                _sucre.Consommer();
-                _touillette.Consommer();
-                
-             for (int i = 0; i < _doseSucre; i++) {
-                _sucre.Consommer();
+            if (_boutonSucreAppuyé && _doseSucre <= GetStockSucre()) {
+                for (int i = 0; i < _doseSucre; i++) {
+                    _sucre.Consommer();
                 }
+                _touillette.Consommer();
             }
         }
-        
+
         _boutonSucreAppuyé = false;
     }
 
@@ -76,9 +74,9 @@ public class Machine {
         _eauRes = new RessourceInfinie(false);
     }
 
-    public void SucrerCafé() { 
-      _boutonSucreAppuyé = true; 
-      _doseSucre = 1;
+    public void SucrerCafé(int doseSucre) {
+        _boutonSucreAppuyé = true;
+        _doseSucre = doseSucre;
     }
 
     public void RéapprovisionnerCafé() {
@@ -96,14 +94,11 @@ public class Machine {
     public void RéapprovisionnerTouillette() {
         _touillette.Réapprovisionner();
     }
+
     public void PayerEnCB() {
         var somme = 0.40;
         var paiementRéussi = _modulePrelevementAutomatique.Prelever(somme);
-        if (paiementRéussi) this.Insérer(somme);
-    }
-
-    public void SucrerCafé(int doseDeSucre) {
-        _boutonSucreAppuyé = true;
-        _doseSucre = doseDeSucre;
+        if (paiementRéussi)
+            this.Insérer(somme);
     }
 }

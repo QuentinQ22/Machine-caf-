@@ -32,13 +32,13 @@ public class MachineBuilder {
         }
 
         if (_stockInitialSucre == 0) {
-            machine.SucrerCafé();
+            machine.SucrerCafé(1);
             machine.Insérer(0.40);
             machine.RéapprovisionnerCafé();
             machine.RéapprovisionnerGobelet();
         }
         if (_stockInitialTouillette == 0) {
-            machine.SucrerCafé();
+            machine.SucrerCafé(1);
             machine.RéapprovisionnerCafé();
             machine.RéapprovisionnerSucre();
         }
@@ -81,9 +81,9 @@ public class MachineBuilder {
         return this;
     }
 
-
     public MachineBuilder SansTouillette() {
         _stockInitialTouillette = 0;
+        return this;
     }
     
     public MachineBuilder AyantUnModuleDePaiement(ModulePrelevementAutomatique modulePaiement) {
