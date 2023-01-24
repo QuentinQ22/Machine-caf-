@@ -6,8 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="1c22d6fd-ea5d-42db-afe8-0d061247ef2d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machineacafe/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/machineacafe/Machine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machineacafe/Ressource.java" beforeDir="false" afterPath="$PROJECT_DIR$/machineacafe/Ressource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machineacafe/RessourceInfinie.java" beforeDir="false" afterPath="$PROJECT_DIR$/machineacafe/RessourceInfinie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machineacafe/RessourceStockée.java" beforeDir="false" afterPath="$PROJECT_DIR$/machineacafe/RessourceStockée.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/MachineACafeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/machineacafe/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Machine-caf-/machineacafe/Machine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/machineacafe/RessourceStockée.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Machine-caf-/machineacafe/RessourceStockée.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/recette/Demo20230103.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Machine-caf-/StocksTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Machine-caf-/StocksTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Machine-caf-/utilities/MachineBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Machine-caf-/utilities/MachineBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/MachineACafeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/MachineACafeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/PénuriesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PénuriesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/StocksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/StocksTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/SucreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SucreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/recette/Demo20230103.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/recette/Demo20230103.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/utilities/MachineBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/utilities/MachineBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +55,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
-  <component name="RunManager" selected="JUnit.PénuriesTest.Test_Sans_Touillette">
-    <configuration name="PénuriesTest.Decrementation_Café" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PénuriesTest">
+    <configuration name="PénuriesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Machine-caf-" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PénuriesTest" />
-      <option name="METHOD_NAME" value="Decrementation_Café" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -71,11 +84,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StocksTest.StockInitialTouillette" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StocksTest.Decrementation_Gobelets" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Machine-caf-" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="StocksTest" />
-      <option name="METHOD_NAME" value="StockInitialTouillette" />
+      <option name="METHOD_NAME" value="Decrementation_Gobelets" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -93,11 +106,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PénuriesTest" />
         <item itemvalue="JUnit.PénuriesTest.Test_Sans_Touillette" />
-        <item itemvalue="JUnit.StocksTest.StockInitialTouillette" />
-        <item itemvalue="JUnit.StocksTest.TestReapproTouillette" />
-        <item itemvalue="JUnit.PénuriesTest.Decrementation_Café" />
         <item itemvalue="JUnit.StocksTest" />
+        <item itemvalue="JUnit.StocksTest.TestReapproTouillette" />
+        <item itemvalue="JUnit.StocksTest.Decrementation_Gobelets" />
       </list>
     </recent_temporary>
   </component>
@@ -138,6 +151,11 @@
           <url>file://$PROJECT_DIR$/test/PénuriesTest.java</url>
           <line>94</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/StocksTest.java</url>
+          <line>222</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

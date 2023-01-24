@@ -11,7 +11,7 @@ public class PénuriesTest {
             "QUAND on met 40cts " +
             "ALORS aucun café ne coule " +
             "ET l'argent est rendu")
-    public void Test_Sans_Eau(){
+    public void Test_Sans_Eau() {
         // ETANT DONNE une machine n'ayant plus d'eau
         Machine machine = MachineBuilder.Default();
         machine.CouperEau();
@@ -36,7 +36,7 @@ public class PénuriesTest {
             "QUAND on met 40cts " +
             "ALORS aucun café ne coule " +
             "ET l'argent est rendu")
-    public void Test_Sans_Gobelet(){
+    public void Test_Sans_Gobelet() {
         // ETANT DONNE une machine n'ayant pas de gobelets
         Machine machine = new MachineBuilder()
                 .SansGobelets()
@@ -62,7 +62,7 @@ public class PénuriesTest {
             "QUAND on met 40cts " +
             "ALORS aucun café ne coule " +
             "ET l'argent est rendu")
-    public void Test_Sans_Café(){
+    public void Test_Sans_Café() {
         // ETANT DONNE une machine n'ayant pas de café
         Machine machine = new MachineBuilder()
                 .SansCafé()
@@ -89,7 +89,7 @@ public class PénuriesTest {
             "QUAND on insère 40 cts " +
             "ALORS aucun café ne coule " +
             "ET l'argent est remboursé")
-    public void Decrementation_Café(){
+    public void Decrementation_Café() {
         // ETANT DONNE une machine n'ayant plus de sucre
         Machine machine = new MachineBuilder().SansSucre().Build();
         int nombreCaféInitiaux = machine.GetNombreCafésServis();
@@ -118,7 +118,7 @@ public class PénuriesTest {
             "ALORS un café coule " +
             "ET le sucre est consommé" +
             "ET l'argent est encaissé")
-    public void Test_Sans_Touillette(){
+    public void Test_Sans_Touillette() {
         // ETANT DONNE une machine n'ayant pas de touillette
         Machine machine = new MachineBuilder()
                 .SansTouillette()
@@ -137,11 +137,11 @@ public class PénuriesTest {
 
         // ALORS un café coule
         int nombreCafésFinaux = machine.GetNombreCafésServis();
-        assertEquals(nombreCaféInitiaux +1, nombreCafésFinaux);
+        assertEquals(nombreCaféInitiaux + 1, nombreCafésFinaux);
 
         //ET une dose de sucre est consommé
         int nombreDoseDeSucreFinal = machine.GetStockSucre();
-        assertEquals(nombreDoseDeSucreInitial +1, nombreDoseDeSucreFinal);
+        assertEquals(nombreDoseDeSucreInitial - 1, nombreDoseDeSucreFinal);
 
         // ET l'argent est encaissé
         double argentEncaisséFinal = machine.GetArgentEncaissé();

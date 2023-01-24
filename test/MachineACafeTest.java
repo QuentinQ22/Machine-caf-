@@ -5,13 +5,13 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import utilities.MachineBuilder;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MachineACafeTest {
     @ParameterizedTest
     @DisplayName("QUAND on met au moins 40cts ALORS un café coule ET l'argent est encaissé")
     @ValueSource(doubles = {0.40, 0.41})
-    public void Test_Cafe_Coule(double sommeInsérée){
+    public void Test_Cafe_Coule(double sommeInsérée) {
         // ETANT DONNE une machine
         Machine machine = MachineBuilder.Default();
         int nombreCaféInitiaux = machine.GetNombreCafésServis();
@@ -31,7 +31,7 @@ public class MachineACafeTest {
 
     @Test
     @DisplayName("QUAND on met moins de 40cts ALORS aucun café ne coule ET l'argent est rendu")
-    public void Test_Pas_Assez_Argent(){
+    public void Test_Pas_Assez_Argent() {
         // ETANT DONNE une machine
         Machine machine = MachineBuilder.Default();
         int nombreCaféInitiaux = machine.GetNombreCafésServis();

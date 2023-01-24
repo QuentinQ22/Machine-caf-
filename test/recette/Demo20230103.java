@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Demo20230103 {
     @Test
-    public void DemoCafesAssortis(){
+    public void DemoCafesAssortis() {
         var machine = new Machine();
         machine.RéapprovisionnerGobelet();
         machine.RéapprovisionnerGobelet();

@@ -11,7 +11,7 @@ public class StocksTest {
             "QUAND on insère deux fois 40 cts " +
             "ALORS seul un café coule " +
             "ET l'argent du second café est rendu")
-    public void Decrementation_Gobelets(){
+    public void Decrementation_Gobelets() {
         // ETANT DONNE une machine ayant un seul gobelet
         Machine machine = new MachineBuilder()
                 .AyantXGobelets(1)
@@ -40,7 +40,7 @@ public class StocksTest {
             "QUAND on insère deux fois 40 cts " +
             "ALORS seul un café coule " +
             "ET l'argent du second café est rendu")
-    public void Decrementation_Café(){
+    public void Decrementation_Café() {
         // ETANT DONNE une machine ayant une seule dose de café
         Machine machine = new MachineBuilder()
                 .AyantYDosesDeCafé(1)
@@ -67,7 +67,7 @@ public class StocksTest {
     @Test
     @DisplayName("ETANT DONNE une machine " +
             "ALORS le stock initial de sucre est de 1")
-    public void StockInitialSucre(){
+    public void StockInitialSucre() {
         // ETANT DONNE une machine
         var machine = new Machine();
 
@@ -80,7 +80,7 @@ public class StocksTest {
             "ET un appui du technicien sur Reappro Café " +
             "QUAND on insère 40cts 2 fois " +
             "ALORS un seul café est servi")
-    public void TestReapproCafé(){
+    public void TestReapproCafé() {
         // ETANT DONNE une machine n'ayant pas de café
         var machine = new MachineBuilder().SansCafé().Build();
         int cafésServisInitiaux = machine.GetNombreCafésServis();
@@ -103,7 +103,7 @@ public class StocksTest {
             "ET un appui du technicien sur Reappro Café " +
             "QUAND on insère 40cts 2 fois " +
             "ALORS un seul café est servi")
-    public void TestReapproGobelet(){
+    public void TestReapproGobelet() {
         // ETANT DONNE une machine n'ayant pas de gobelet
         var machine = new MachineBuilder().SansGobelets().Build();
         int cafésServisInitiaux = machine.GetNombreCafésServis();
@@ -126,7 +126,7 @@ public class StocksTest {
             "ET un appui du technicien sur Reappro Sucre " +
             "QUAND on insère 40cts 2 fois en ayant appuyé sur Sucrer Café au préalable" +
             "ALORS un seul café est servi")
-    public void TestReapproSucre(){
+    public void TestReapproSucre() {
         // ETANT DONNE une machine n'ayant pas de sucre
         var machine = new MachineBuilder().SansSucre().Build();
         int cafésServisInitiaux = machine.GetNombreCafésServis();
@@ -151,7 +151,7 @@ public class StocksTest {
     @Test
     @DisplayName("ETANT DONNE une machine " +
             "ALORS le stock initial de café est de 1")
-    public void StockInitialCafé(){
+    public void StockInitialCafé() {
         // ETANT DONNE une machine
         var machine = new Machine();
         int cafésServisInitiaux = machine.GetNombreCafésServis();
@@ -170,7 +170,7 @@ public class StocksTest {
     @Test
     @DisplayName("ETANT DONNE une machine " +
             "ALORS le stock initial de gobelets de 1")
-    public void StockInitialGobelets(){
+    public void StockInitialGobelets() {
         // ETANT DONNE une machine
         var machine = new Machine();
         int cafésServisInitiaux = machine.GetNombreCafésServis();
@@ -188,24 +188,25 @@ public class StocksTest {
     @Test
     @DisplayName("ETANT DONNE une machine " +
             "ALORS le stock initial de touillette est de 1")
-    public void StockInitialTouillette(){
+    public void StockInitialTouillette() {
         // ETANT DONNE une machine
         var machine = new Machine();
 
         // ALORS le stock initial de touillette est de 1
         assertEquals(1, machine.GetStockTouillette());
     }
+
     @Test
     @DisplayName("ETANT DONNE une machine n'ayant pas de touillette " +
             "ET un appui du technicien sur Reappro Touillette " +
             "QUAND on insère 40cts 2 fois en ayant appuyé sur Sucrer Café au préalable" +
-            "ALORS un seul café est servi")
-    public void TestReapproTouillette(){
-        // ETANT DONNE une machine n'ayant pas de sucre
+            "ALORS deux cafés sont servi")
+    public void TestReapproTouillette() {
+        // ETANT DONNE une machine n'ayant pas de touillette
         var machine = new MachineBuilder().SansTouillette().Build();
         int cafésServisInitiaux = machine.GetNombreCafésServis();
 
-        // ET un appui du technicien sur Reappro Sucre
+        // ET un appui du technicien sur Reappro Touillette
         machine.RéapprovisionnerTouillette();
 
         // QUAND on insère 40cts 2 fois en ayant appuyé sur Sucrer Café au préalable
@@ -217,7 +218,7 @@ public class StocksTest {
         machine.SucrerCafé();
         machine.Insérer(sommeInsérée);
 
-        // ALORS deux seul café est servi
+        // ALORS deux cafés est servi
         int cafésServisFinaux = machine.GetNombreCafésServis();
         assertEquals(cafésServisInitiaux + 2, cafésServisFinaux);
     }

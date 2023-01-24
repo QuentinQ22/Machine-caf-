@@ -11,9 +11,9 @@ public class SucreTest {
             "ET un appui sur le bouton sucre " +
             "QUAND on insère 40 cts " +
             "ALORS un café coule " +
-            "ET une dose de sucre est consommée"+
+            "ET une dose de sucre est consommée" +
             "ET une touillette est consommée")
-    public void Decrementation_Café(){
+    public void Decrementation_Café() {
         // ETANT DONNE une machine
         Machine machine = MachineBuilder.Default();
         int nombreCaféInitiaux = machine.GetNombreCafésServis();
@@ -38,7 +38,7 @@ public class SucreTest {
 
         // ET une touillette est consommée
         int stockTouilletteFinale = machine.GetStockTouillette();
-        assertEquals(stockTouilletteInitiale -1, stockTouilletteFinale);
+        assertEquals(stockTouilletteInitiale - 1, stockTouilletteFinale);
     }
 
     @Test
@@ -46,9 +46,9 @@ public class SucreTest {
             "ET un appui sur le bouton sucre " +
             "QUAND on insère 40 cts deux fois" +
             "ALORS deux cafés coulent " +
-            "ET une seule dose de sucre est consommée"+
+            "ET une seule dose de sucre est consommée" +
             "ET une seule touillette est consommée")
-    public void RaZ_Bouton_Sucre(){
+    public void RaZ_Bouton_Sucre() {
         // ETANT DONNE une machine
         Machine machine = MachineBuilder.Default();
         int nombreCaféInitiaux = machine.GetNombreCafésServis();
@@ -73,6 +73,6 @@ public class SucreTest {
 
         //ET une touillette est consommée
         int stockTouilletteFinal = machine.GetStockTouillette();
-        assertEquals(stockTouilletteInitiale -1, stockTouilletteFinal);
+        assertEquals(stockTouilletteInitiale - 1, stockTouilletteFinal);
     }
 }

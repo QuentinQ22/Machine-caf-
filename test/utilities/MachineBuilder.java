@@ -13,45 +13,41 @@ public class MachineBuilder {
         return new MachineBuilder().Build();
     }
 
-    public Machine Build()
-    {
+    public Machine Build() {
         var machine = new Machine();
 
-        if(_nombreDosesCafé == 0){
+        if (_nombreDosesCafé == 0) {
             machine.Insérer(0.40);
             machine.RéapprovisionnerGobelet();
         }
 
-        if(_nombreGobelets == 0){
+        if (_nombreGobelets == 0) {
             machine.Insérer(0.40);
             machine.RéapprovisionnerCafé();
         }
 
-        if(_stockInitialSucre == 0){
+        if (_stockInitialSucre == 0) {
             machine.SucrerCafé();
             machine.Insérer(0.40);
             machine.RéapprovisionnerCafé();
             machine.RéapprovisionnerGobelet();
         }
-        if(_stockInitialTouillette == 0)
-        {
+        if (_stockInitialTouillette == 0) {
             machine.SucrerCafé();
-            machine.Insérer(0.40);
             machine.RéapprovisionnerCafé();
             machine.RéapprovisionnerSucre();
-            machine.RéapprovisionnerTouillette();
         }
 
-        for (var dosesCaféDansLaMachine = 1; dosesCaféDansLaMachine < _nombreDosesCafé; dosesCaféDansLaMachine ++)
+        for (var dosesCaféDansLaMachine = 1; dosesCaféDansLaMachine < _nombreDosesCafé; dosesCaféDansLaMachine++)
             machine.RéapprovisionnerCafé();
 
-        for (var gobeletsDansLaMachine = 1; gobeletsDansLaMachine < _nombreGobelets; gobeletsDansLaMachine ++)
+        for (var gobeletsDansLaMachine = 1; gobeletsDansLaMachine < _nombreGobelets; gobeletsDansLaMachine++)
             machine.RéapprovisionnerGobelet();
 
-        for (var sucreDansLaMachine = 1; sucreDansLaMachine < _stockInitialSucre; sucreDansLaMachine ++)
+        for (var sucreDansLaMachine = 1; sucreDansLaMachine < _stockInitialSucre; sucreDansLaMachine++)
             machine.RéapprovisionnerSucre();
 
-        for (var touillettesDansLaMachine = 1; touillettesDansLaMachine < _stockInitialTouillette; touillettesDansLaMachine ++)
+        for (var touillettesDansLaMachine = 1; touillettesDansLaMachine < _stockInitialTouillette; touillettesDansLaMachine++)
             machine.RéapprovisionnerTouillette();
 
         return machine;
