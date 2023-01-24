@@ -195,4 +195,30 @@ public class StocksTest {
         // ALORS le stock initial de touillette est de 1
         assertEquals(1, machine.GetStockTouillette());
     }
+    @Test
+    @DisplayName("ETANT DONNE une machine n'ayant pas de touillette " +
+            "ET un appui du technicien sur Reappro Touillette " +
+            "QUAND on insère 40cts 2 fois en ayant appuyé sur Sucrer Café au préalable" +
+            "ALORS un seul café est servi")
+    public void TestReapproTouillette(){
+        // ETANT DONNE une machine n'ayant pas de sucre
+        var machine = new MachineBuilder().SansTouillette().Build();
+        int cafésServisInitiaux = machine.GetNombreCafésServis();
+
+        // ET un appui du technicien sur Reappro Sucre
+        machine.RéapprovisionnerTouillette();
+
+        // QUAND on insère 40cts 2 fois en ayant appuyé sur Sucrer Café au préalable
+        double sommeInsérée = 0.40;
+
+        machine.SucrerCafé();
+        machine.Insérer(sommeInsérée);
+
+        machine.SucrerCafé();
+        machine.Insérer(sommeInsérée);
+
+        // ALORS deux seul café est servi
+        int cafésServisFinaux = machine.GetNombreCafésServis();
+        assertEquals(cafésServisInitiaux + 2, cafésServisFinaux);
+    }
 }

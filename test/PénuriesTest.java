@@ -143,7 +143,7 @@ public class PénuriesTest {
         int nombreDoseDeSucreFinal = machine.GetStockSucre();
         assertEquals(nombreDoseDeSucreInitial +1, nombreDoseDeSucreFinal);
 
-        // ET l'argent est rendu
+        // ET l'argent est encaissé
         double argentEncaisséFinal = machine.GetArgentEncaissé();
         assertEquals(argentEncaisséInitial + 0.40, argentEncaisséFinal);
     }

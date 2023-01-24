@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c22d6fd-ea5d-42db-afe8-0d061247ef2d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test/recette/Demo20230103.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machineacafe/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/machineacafe/Machine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PénuriesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PénuriesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/StocksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/StocksTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/utilities/MachineBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/utilities/MachineBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +39,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="JUnit.StocksTest.StockInitialTouillette">
+  <component name="RunManager" selected="JUnit.SucreTest.RaZ_Bouton_Sucre">
     <configuration name="Demo20230103.DemoCafesAssortis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Machine-caf-" />
       <extension name="coverage">
@@ -71,15 +66,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StocksTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Machine-caf-" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="StocksTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StocksTest.StockInitialTouillette" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Machine-caf-" />
       <option name="PACKAGE_NAME" value="" />
@@ -90,22 +76,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SucreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SucreTest.Decrementation_Café" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Machine-caf-" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SucreTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="Decrementation_Café" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SucreTest.RaZ_Bouton_Sucre" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Machine-caf-" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SucreTest" />
+      <option name="METHOD_NAME" value="RaZ_Bouton_Sucre" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SucreTest.RaZ_Bouton_Sucre" />
+        <item itemvalue="JUnit.SucreTest.Decrementation_Café" />
         <item itemvalue="JUnit.StocksTest.StockInitialTouillette" />
         <item itemvalue="JUnit.PénuriesTest.Test_Sans_Touillette" />
         <item itemvalue="JUnit.Demo20230103.DemoCafesAssortis" />
-        <item itemvalue="JUnit.SucreTest" />
-        <item itemvalue="JUnit.StocksTest" />
       </list>
     </recent_temporary>
   </component>
