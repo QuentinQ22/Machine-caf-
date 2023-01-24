@@ -6,7 +6,9 @@ import net.bank.interop.ModulePrelevementAutomatique;
 public class MachineBuilder {
     private int _nombreDosesCafé = 2;
     private int _nombreGobelets = 2;
+    private int _nombreTouillettes = 2;
     private int _stockInitialSucre = 1;
+    private int _stockInitialTouillette = 1;
     private ModulePrelevementAutomatique _modulePrélèvementAutomatique = null;
 
     public static Machine Default() {
@@ -19,31 +21,39 @@ public class MachineBuilder {
                 ? new Machine()
                 : new Machine(_modulePrélèvementAutomatique);
 
-        if(_nombreDosesCafé == 0){
+        if (_nombreDosesCafé == 0) {
             machine.Insérer(0.40);
             machine.RéapprovisionnerGobelet();
         }
 
-        if(_nombreGobelets == 0){
+        if (_nombreGobelets == 0) {
             machine.Insérer(0.40);
             machine.RéapprovisionnerCafé();
         }
 
-        if(_stockInitialSucre == 0){
+        if (_stockInitialSucre == 0) {
             machine.SucrerCafé();
             machine.Insérer(0.40);
             machine.RéapprovisionnerCafé();
             machine.RéapprovisionnerGobelet();
         }
+        if (_stockInitialTouillette == 0) {
+            machine.SucrerCafé();
+            machine.RéapprovisionnerCafé();
+            machine.RéapprovisionnerSucre();
+        }
 
-        for (var dosesCaféDansLaMachine = 1; dosesCaféDansLaMachine < _nombreDosesCafé; dosesCaféDansLaMachine ++)
+        for (var dosesCaféDansLaMachine = 1; dosesCaféDansLaMachine < _nombreDosesCafé; dosesCaféDansLaMachine++)
             machine.RéapprovisionnerCafé();
 
-        for (var gobeletsDansLaMachine = 1; gobeletsDansLaMachine < _nombreGobelets; gobeletsDansLaMachine ++)
+        for (var gobeletsDansLaMachine = 1; gobeletsDansLaMachine < _nombreGobelets; gobeletsDansLaMachine++)
             machine.RéapprovisionnerGobelet();
 
-        for (var sucreDansLaMachine = 1; sucreDansLaMachine < _stockInitialSucre; sucreDansLaMachine ++)
+        for (var sucreDansLaMachine = 1; sucreDansLaMachine < _stockInitialSucre; sucreDansLaMachine++)
             machine.RéapprovisionnerSucre();
+
+        for (var touillettesDansLaMachine = 1; touillettesDansLaMachine < _stockInitialTouillette; touillettesDansLaMachine++)
+            machine.RéapprovisionnerTouillette();
 
         return machine;
     }
@@ -71,6 +81,11 @@ public class MachineBuilder {
         return this;
     }
 
+
+    public MachineBuilder SansTouillette() {
+        _stockInitialTouillette = 0;
+    }
+    
     public MachineBuilder AyantUnModuleDePaiement(ModulePrelevementAutomatique modulePaiement) {
         _modulePrélèvementAutomatique = modulePaiement;
         return this;

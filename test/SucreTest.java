@@ -11,12 +11,15 @@ public class SucreTest {
             "ET un appui sur le bouton sucre " +
             "QUAND on insère 40 cts " +
             "ALORS un café coule " +
-            "ET une dose de sucre est consommée")
+            "ET une dose de sucre est consommée" +
+            "ET une touillette est consommée")
+
     public void Decrementation_Café() {
         // ETANT DONNE une machine
         Machine machine = MachineBuilder.Default();
         int nombreCaféInitiaux = machine.GetNombreCafésServis();
         int stockSucreInitial = machine.GetStockSucre();
+        int stockTouilletteInitiale = machine.GetStockTouillette();
 
         // ET un appui sur le bouton sucre
         machine.SucrerCafé();
@@ -33,6 +36,10 @@ public class SucreTest {
         // ET une dose de sucre est consommée
         int stockSucreFinal = machine.GetStockSucre();
         assertEquals(stockSucreInitial - 1, stockSucreFinal);
+
+        // ET une touillette est consommée
+        int stockTouilletteFinale = machine.GetStockTouillette();
+        assertEquals(stockTouilletteInitiale - 1, stockTouilletteFinale);
     }
 
     @Test
@@ -40,12 +47,15 @@ public class SucreTest {
             "ET un appui sur le bouton sucre " +
             "QUAND on insère 40 cts deux fois" +
             "ALORS deux cafés coulent " +
-            "ET une seule dose de sucre est consommée")
+            "ET une seule dose de sucre est consommée" +
+            "ET une seule touillette est consommée")
+
     public void RaZ_Bouton_Sucre() {
         // ETANT DONNE une machine
         Machine machine = MachineBuilder.Default();
         int nombreCaféInitiaux = machine.GetNombreCafésServis();
         int stockSucreInitial = machine.GetStockSucre();
+        int stockTouilletteInitiale = machine.GetStockTouillette();
 
         // ET un appui sur le bouton sucre
         machine.SucrerCafé();
@@ -62,6 +72,10 @@ public class SucreTest {
         // ET une dose de sucre est consommée
         int stockSucreFinal = machine.GetStockSucre();
         assertEquals(stockSucreInitial - 1, stockSucreFinal);
+
+        //ET une touillette est consommée
+        int stockTouilletteFinal = machine.GetStockTouillette();
+        assertEquals(stockTouilletteInitiale - 1, stockTouilletteFinal);
     }
 
     @Test
