@@ -72,8 +72,8 @@ public class SucreTest {
             "ET la dose de sucre consommée correspond à celle choisit par l'utilisateur")
     public void Ajout_Quantite_Sucre() {
         // ETANT DONNE une machine
-        int doseDeSucre = 3;
         Machine machine = MachineBuilder.Default();
+        int doseDeSucre = 3;
         int nombreCaféInitiaux = machine.GetNombreCafésServis();
         int stockSucreInitial = machine.GetStockSucre();
 
