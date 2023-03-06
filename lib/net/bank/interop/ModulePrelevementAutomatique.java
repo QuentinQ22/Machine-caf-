@@ -1,4 +1,4 @@
-package net.bank.interop;
+package lib.net.bank.interop;
 
 import java.util.concurrent.Callable;
 
