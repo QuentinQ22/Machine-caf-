@@ -4,33 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c22d6fd-ea5d-42db-afe8-0d061247ef2d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test/Cappucino.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/ChocoLatté.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/ChocoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/LaitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machineacafe/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/machineacafe/Machine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/machineacafe/PaiementCarteTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Machine-caf-/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Machine-caf-/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/PénuriesTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/StocksTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/SucreTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/machineacafe/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Machine-caf-/machineacafe/Machine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/utilities/MachineBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Machine-caf-/PénuriesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Machine-caf-/PénuriesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Machine-caf-/StocksTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Machine-caf-/StocksTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Machine-caf-/SucreTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Machine-caf-/SucreTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Machine-caf-/recette/Demo20230103.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Machine-caf-/utilities/MachineBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Machine-caf-/utilities/MachineBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PaiementCarteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PaiementCarteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/PénuriesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PénuriesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/StocksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/StocksTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SucreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/SucreTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/recette/Demo20230103.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/recette/Demo20230103.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/utilities/MachineBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/utilities/MachineBuilder.java" afterDir="false" />
-    </list>
+    <list default="true" id="1c22d6fd-ea5d-42db-afe8-0d061247ef2d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,11 +47,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaiementCarteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Demo20230103.DemoCafesAssortis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Machine-caf-" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PaiementCarteTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="recette.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="recette" />
+      <option name="MAIN_CLASS_NAME" value="recette.Demo20230103" />
+      <option name="METHOD_NAME" value="DemoCafesAssortis" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,10 +93,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in Machine-caf-" />
+        <item itemvalue="JUnit.Demo20230103.DemoCafesAssortis" />
         <item itemvalue="JUnit.SucreTest" />
         <item itemvalue="JUnit.StocksTest" />
         <item itemvalue="JUnit.PénuriesTest" />
-        <item itemvalue="JUnit.PaiementCarteTest" />
       </list>
     </recent_temporary>
   </component>

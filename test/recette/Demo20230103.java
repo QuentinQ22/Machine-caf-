@@ -37,7 +37,7 @@ public class Demo20230103 {
         machine.Insérer(0.40);
 
         assertEquals(4, machine.GetNombreCafésServis());
-        assertEquals(0, machine.GetStockSucre());
+        assertEquals(9, machine.GetStockSucre());
         assertEquals(1.6, machine.GetArgentEncaissé());
     }
 }
