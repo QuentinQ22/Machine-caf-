@@ -1,6 +1,6 @@
 package machineacafe;
 
-import net.bank.interop.ModulePrelevementAutomatique;
+import lib.net.bank.interop.ModulePrelevementAutomatique;
 
 public class Machine {
     private int _nombreCafésServis = 0;
