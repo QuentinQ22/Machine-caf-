@@ -7,6 +7,8 @@ public class MachineBuilder {
     private int _nombreDosesCafé = 2;
     private int _nombreGobelets = 2;
     private int _nombreTouillettes = 2;
+    private int _nombreDosesLait = 1;
+    private int _nombreDosesChoco = 1;
     private int _stockInitialSucre = 1;
     private int _stockInitialTouillette = 1;
     private ModulePrelevementAutomatique _modulePrélèvementAutomatique = null;
@@ -32,15 +34,28 @@ public class MachineBuilder {
         }
 
         if (_stockInitialSucre == 0) {
-            machine.SucrerCafé();
+            machine.SucrerCafé(1);
             machine.Insérer(0.40);
             machine.RéapprovisionnerCafé();
             machine.RéapprovisionnerGobelet();
         }
         if (_stockInitialTouillette == 0) {
-            machine.SucrerCafé();
+            machine.SucrerCafé(1);
             machine.RéapprovisionnerCafé();
             machine.RéapprovisionnerSucre();
+        }
+
+        if (_nombreDosesChoco == 0){
+            machine.Choco();
+            machine.Insérer(0.4);
+            machine.RéapprovisionnerGobelet();
+        }
+
+        if (_nombreDosesLait == 0){
+            machine.LattéCafé();
+            machine.Insérer(0.45);
+            machine.RéapprovisionnerCafé();
+            machine.RéapprovisionnerGobelet();
         }
 
         for (var dosesCaféDansLaMachine = 1; dosesCaféDansLaMachine < _nombreDosesCafé; dosesCaféDansLaMachine++)
@@ -54,6 +69,12 @@ public class MachineBuilder {
 
         for (var touillettesDansLaMachine = 1; touillettesDansLaMachine < _stockInitialTouillette; touillettesDansLaMachine++)
             machine.RéapprovisionnerTouillette();
+
+        for (var laitDansLaMachine = 1; laitDansLaMachine < _nombreDosesLait; laitDansLaMachine ++)
+            machine.RéapprovisionnerLait();
+
+        for (var chocoDansLaMachine = 1; chocoDansLaMachine < _nombreDosesChoco; chocoDansLaMachine ++)
+            machine.RéapprovisionnerChoco();
 
         return machine;
     }
@@ -81,11 +102,20 @@ public class MachineBuilder {
         return this;
     }
 
-
     public MachineBuilder SansTouillette() {
         _stockInitialTouillette = 0;
+        return this;
     }
-    
+
+    public MachineBuilder SansLait() {
+        _nombreDosesLait = 0;
+        return this;
+    }
+
+    public MachineBuilder SansChoco() {
+        _nombreDosesChoco = 0;
+        return this;
+    }
     public MachineBuilder AyantUnModuleDePaiement(ModulePrelevementAutomatique modulePaiement) {
         _modulePrélèvementAutomatique = modulePaiement;
         return this;

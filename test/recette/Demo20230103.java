@@ -24,10 +24,10 @@ public class Demo20230103 {
         machine.Insérer(0.40);
 
         //Cafés sucrés
-        machine.SucrerCafé();
+        machine.SucrerCafé(1);
         machine.Insérer(0.40);
 
-        machine.SucrerCafé();
+        machine.SucrerCafé(1);
         machine.Insérer(0.40);
 
         //Café simple

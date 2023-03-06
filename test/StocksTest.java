@@ -66,13 +66,13 @@ public class StocksTest {
 
     @Test
     @DisplayName("ETANT DONNE une machine " +
-            "ALORS le stock initial de sucre est de 1")
+            "ALORS le stock initial de sucre est de 10")
     public void StockInitialSucre() {
         // ETANT DONNE une machine
         var machine = new Machine();
 
-        // ALORS le stock initial de sucre est de 1
-        assertEquals(1, machine.GetStockSucre());
+        // ALORS le stock initial de sucre est de 10
+        assertEquals(10, machine.GetStockSucre());
     }
 
     @Test
@@ -124,8 +124,8 @@ public class StocksTest {
     @Test
     @DisplayName("ETANT DONNE une machine n'ayant pas de sucre " +
             "ET un appui du technicien sur Reappro Sucre " +
-            "QUAND on insère 40cts 2 fois en ayant appuyé sur Sucrer Café au préalable" +
-            "ALORS un seul café est servi")
+            "QUAND on insère 40cts en ayant appuyé sur Sucrer Café au préalable" +
+            "ALORS un café est servi")
     public void TestReapproSucre() {
         // ETANT DONNE une machine n'ayant pas de sucre
         var machine = new MachineBuilder().SansSucre().Build();
@@ -137,10 +137,7 @@ public class StocksTest {
         // QUAND on insère 40cts 2 fois en ayant appuyé sur Sucrer Café au préalable
         double sommeInsérée = 0.40;
 
-        machine.SucrerCafé();
-        machine.Insérer(sommeInsérée);
-
-        machine.SucrerCafé();
+        machine.SucrerCafé(1);
         machine.Insérer(sommeInsérée);
 
         // ALORS un seul café est servi
@@ -212,14 +209,36 @@ public class StocksTest {
         // QUAND on insère 40cts 2 fois en ayant appuyé sur Sucrer Café au préalable
         double sommeInsérée = 0.40;
 
-        machine.SucrerCafé();
+        machine.SucrerCafé(1);
         machine.Insérer(sommeInsérée);
 
-        machine.SucrerCafé();
+        machine.SucrerCafé(1);
         machine.Insérer(sommeInsérée);
 
         // ALORS deux cafés est servi
         int cafésServisFinaux = machine.GetNombreCafésServis();
         assertEquals(cafésServisInitiaux + 2, cafésServisFinaux);
+    }
+
+    @Test
+    @DisplayName("ETANT DONNE une machine " +
+            "ALORS le stock initial de lait est de 1")
+    public void StockInitialLait(){
+        // ETANT DONNE une machine
+        var machine = new Machine();
+
+        // ALORS le stock initial de lait est de 1
+        assertEquals(1, machine.GetStockLait());
+    }
+
+    @Test
+    @DisplayName("ETANT DONNE une machine " +
+            "ALORS le stock initial de Choco est de 1")
+    public void StockInitialChoco(){
+        // ETANT DONNE une machine
+        var machine = new Machine();
+
+        // ALORS le stock initial de Choco est de 1
+        assertEquals(1, machine.GetStockChoco());
     }
 }

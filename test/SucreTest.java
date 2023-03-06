@@ -22,7 +22,7 @@ public class SucreTest {
         int stockTouilletteInitiale = machine.GetStockTouillette();
 
         // ET un appui sur le bouton sucre
-        machine.SucrerCafé();
+        machine.SucrerCafé(1);
 
         double sommeInsérée = 0.40;
 
@@ -58,7 +58,7 @@ public class SucreTest {
         int stockTouilletteInitiale = machine.GetStockTouillette();
 
         // ET un appui sur le bouton sucre
-        machine.SucrerCafé();
+        machine.SucrerCafé(1);
 
         // QUAND on insère 40 cts deux fois
         double sommeInsérée = 0.40;
