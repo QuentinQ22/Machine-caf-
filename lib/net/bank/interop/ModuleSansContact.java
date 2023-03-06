@@ -1,4 +1,6 @@
-package net.bank.interop;
+package lib.net.bank.interop;
+
+import lib.net.bank.interop.ModulePrelevementAutomatique;
 
 import java.util.Random;
 

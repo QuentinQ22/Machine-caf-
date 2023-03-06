@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c22d6fd-ea5d-42db-afe8-0d061247ef2d" name="Changes" comment="" />
+    <list default="true" id="1c22d6fd-ea5d-42db-afe8-0d061247ef2d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/net/bank/interop/ModuleSansContact.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/net/bank/interop/ModuleSansContact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/machineacafe/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/machineacafe/Machine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Machine-caf-/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/machineacafe/Machine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Machine-caf-/machineacafe/Machine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/net/bank/interop/ModulePrelevementAutomatique.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Machine-caf-/net/bank/interop/ModuleSansContact.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/utilities/ModulePaiementMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/utilities/ModulePaiementMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/utilities/ModulePaiementSpy.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/utilities/ModulePaiementSpy.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

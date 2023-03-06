@@ -1,6 +1,6 @@
 package utilities;
 
-import net.bank.interop.ModulePrelevementAutomatique;
+import lib.net.bank.interop.ModulePrelevementAutomatique;
 
 import java.util.ArrayList;
 

@@ -9,7 +9,7 @@ public class MachineBuilder {
     private int _nombreTouillettes = 2;
     private int _nombreDosesLait = 1;
     private int _nombreDosesChoco = 1;
-    private int _stockInitialSucre = 1;
+    private int _stockInitialSucre = 10;
     private int _stockInitialTouillette = 1;
     private ModulePrelevementAutomatique _modulePrélèvementAutomatique = null;
 

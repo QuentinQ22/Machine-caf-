@@ -25,7 +25,7 @@ public class Machine {
     public Machine() {
         _gobelets = new RessourceStockée(1);
         _café = new RessourceStockée(1);
-        _sucre = new RessourceStockée(100);
+        _sucre = new RessourceStockée(10);
         _eauRes = new RessourceInfinie(true);
         _touillette = new RessourceStockée(1);
         _lait = new RessourceStockée(1);
