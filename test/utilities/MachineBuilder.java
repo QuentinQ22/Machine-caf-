@@ -1,7 +1,7 @@
 package utilities;
 
 import machineacafe.*;
-import net.bank.interop.ModulePrelevementAutomatique;
+import lib.net.bank.interop.ModulePrelevementAutomatique;
 
 public class MachineBuilder {
     private int _nombreDosesCafé = 2;
