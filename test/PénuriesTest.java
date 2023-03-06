@@ -172,4 +172,59 @@ public class PénuriesTest {
                 assertEquals(argentEncaisséInitial + 0.40, argentEncaisséFinal);
         }
 
+    @Test
+    @DisplayName("ETANT DONNE une machine n'ayant pas de Lait " +
+            "ET un appui sur le bouton latté " +
+            "QUAND on met 45cts " +
+            "ALORS aucun café ne coule " +
+            "ET l'argent est rendu")
+    public void Test_Sans_Lait(){
+        // ETANT DONNE une machine n'ayant plus de lait
+        Machine machine = new MachineBuilder().SansLait().Build();
+
+        int nombreCaféInitiaux = machine.GetNombreCafésServis();
+        double argentEncaisséInitial = machine.GetArgentEncaissé();
+
+        // ET un appui sur le bouton latté
+        machine.LattéCafé();
+
+        // QUAND on insère 45 cts
+        machine.Insérer(0.45);
+
+        // ALORS aucun café ne coule
+        int nombreCafésFinaux = machine.GetNombreCafésServis();
+        assertEquals(nombreCaféInitiaux, nombreCafésFinaux);
+
+        // ET l'argent est rendu
+        double argentEncaisséFinal = machine.GetArgentEncaissé();
+        assertEquals(argentEncaisséInitial, argentEncaisséFinal);
+    }
+
+    @Test
+    @DisplayName("ETANT DONNE une machine n'ayant pas de chocolat" +
+            "ET on appui sur le boutton choco" +
+            "QUAND on met 40 cts" +
+            "ALORS aucun choco ne coule" +
+            "ET l'argent est rendu")
+    public void Test_Sans_Choco(){
+//        ETANT DONNE une machine n'ayant pas de chocolat
+        Machine machine = new MachineBuilder().SansChoco().Build();
+
+        int nombreChocoInitiaux = machine.GetNombreChocoServis();
+        double argentEncaisséInitial = machine.GetArgentEncaissé();
+
+//        ET on appui sur le boutton choco
+        machine.Choco();
+
+//        QUAND on met 40 cts
+        machine.Insérer(0.4);
+
+//        ALORS aucun choco ne coule
+        int nombreChocoFinaux = machine.GetNombreChocoServis();
+        assertEquals(nombreChocoInitiaux, nombreChocoFinaux);
+
+//        ET l'argent est rendu
+        double argentEncaisséFinal = machine.GetArgentEncaissé();
+        assertEquals(argentEncaisséInitial, argentEncaisséFinal);
+    }
 }

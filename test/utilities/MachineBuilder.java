@@ -1,12 +1,14 @@
 package utilities;
 
 import machineacafe.*;
-import net.bank.interop.ModulePrelevementAutomatique;
+import lib.net.bank.interop.ModulePrelevementAutomatique;
 
 public class MachineBuilder {
     private int _nombreDosesCafé = 2;
     private int _nombreGobelets = 2;
     private int _nombreTouillettes = 2;
+    private int _nombreDosesLait = 1;
+    private int _nombreDosesChoco = 1;
     private int _stockInitialSucre = 1;
     private int _stockInitialTouillette = 1;
     private ModulePrelevementAutomatique _modulePrélèvementAutomatique = null;
@@ -43,6 +45,19 @@ public class MachineBuilder {
             machine.RéapprovisionnerSucre();
         }
 
+        if (_nombreDosesChoco == 0){
+            machine.Choco();
+            machine.Insérer(0.4);
+            machine.RéapprovisionnerGobelet();
+        }
+
+        if (_nombreDosesLait == 0){
+            machine.LattéCafé();
+            machine.Insérer(0.45);
+            machine.RéapprovisionnerCafé();
+            machine.RéapprovisionnerGobelet();
+        }
+
         for (var dosesCaféDansLaMachine = 1; dosesCaféDansLaMachine < _nombreDosesCafé; dosesCaféDansLaMachine++)
             machine.RéapprovisionnerCafé();
 
@@ -54,6 +69,12 @@ public class MachineBuilder {
 
         for (var touillettesDansLaMachine = 1; touillettesDansLaMachine < _stockInitialTouillette; touillettesDansLaMachine++)
             machine.RéapprovisionnerTouillette();
+
+        for (var laitDansLaMachine = 1; laitDansLaMachine < _nombreDosesLait; laitDansLaMachine ++)
+            machine.RéapprovisionnerLait();
+
+        for (var chocoDansLaMachine = 1; chocoDansLaMachine < _nombreDosesChoco; chocoDansLaMachine ++)
+            machine.RéapprovisionnerChoco();
 
         return machine;
     }
@@ -85,7 +106,16 @@ public class MachineBuilder {
         _stockInitialTouillette = 0;
         return this;
     }
-    
+
+    public MachineBuilder SansLait() {
+        _nombreDosesLait = 0;
+        return this;
+    }
+
+    public MachineBuilder SansChoco() {
+        _nombreDosesChoco = 0;
+        return this;
+    }
     public MachineBuilder AyantUnModuleDePaiement(ModulePrelevementAutomatique modulePaiement) {
         _modulePrélèvementAutomatique = modulePaiement;
         return this;

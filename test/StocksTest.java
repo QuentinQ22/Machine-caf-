@@ -219,4 +219,26 @@ public class StocksTest {
         int cafésServisFinaux = machine.GetNombreCafésServis();
         assertEquals(cafésServisInitiaux + 2, cafésServisFinaux);
     }
+
+    @Test
+    @DisplayName("ETANT DONNE une machine " +
+            "ALORS le stock initial de lait est de 1")
+    public void StockInitialLait(){
+        // ETANT DONNE une machine
+        var machine = new Machine();
+
+        // ALORS le stock initial de lait est de 1
+        assertEquals(1, machine.GetStockLait());
+    }
+
+    @Test
+    @DisplayName("ETANT DONNE une machine " +
+            "ALORS le stock initial de Choco est de 1")
+    public void StockInitialChoco(){
+        // ETANT DONNE une machine
+        var machine = new Machine();
+
+        // ALORS le stock initial de Choco est de 1
+        assertEquals(1, machine.GetStockChoco());
+    }
 }
